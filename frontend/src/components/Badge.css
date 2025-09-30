@@ -1,0 +1,15 @@
+@import '../styles/variables.css';
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25em 0.6em;
+  font-size: 0.82rem;
+  border-radius: 999px;
+  font-weight: 600;
+  line-height: 1;
+}
+.badge-neutral { background: #39365a; color: var(--main-white); }
+.badge-success { background: rgba(56,176,0,0.18); color: #82e082; }
+.badge-danger { background: rgba(229,62,62,0.18); color: #f2a3a3; }
+.badge-warning { background: rgba(255,185,2,0.2); color: #ffcd47; }

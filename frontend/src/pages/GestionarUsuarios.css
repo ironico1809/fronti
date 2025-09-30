@@ -1,0 +1,226 @@
+@import '../styles/variables.css';
+
+.manage-users-bg {
+	min-height: 100vh;
+	background: radial-gradient(ellipse 80% 60% at 60% 20%, #23213a 0%, #171528 100%);
+	display: flex;
+}
+
+.page-container {
+	padding: 0.4rem 0.2rem 1rem 0;
+	width: 100%;
+	max-width: 1040px;
+	box-sizing: border-box;
+}
+
+.users-card {
+	background: #2a2749;
+	border-radius: 10px;
+	box-shadow: 0 5px 18px rgba(0,0,0,0.22);
+	padding: 0.9rem;
+	overflow-x: auto;
+	border: 1px solid #3c3961;
+}
+
+.page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.9rem;
+	flex-wrap: wrap;
+	gap: 0.9rem;
+}
+
+.page-header h1 { 
+	color: var(--main-white); 
+	margin: 0; 
+	font-size: 1.3rem; 
+}
+
+.page-header p { 
+	color: var(--grey-medium); 
+	margin: 0.35rem 0 0; 
+}
+
+.filters-row {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr 1fr auto;
+	gap: 0.7rem;
+	margin: 0.9rem 0 1rem;
+}
+
+.select-filter {
+	background: var(--blue-mid);
+	border: 1.5px solid var(--blue-mid);
+	color: var(--main-white);
+	border-radius: 8px;
+	padding: 0.8em;
+	outline: none;
+}
+
+.table { 
+	width: 100%; 
+	min-width: 800px; /* Ensures table doesn't break on mobile */
+}
+
+.thead, .trow {
+	/* 6 columnas: ID, Nombre, Correo, Teléfono, Estado, Acciones */
+	display: grid;
+	grid-template-columns: 0.7fr 2.1fr 2.3fr 1.6fr 1.1fr 1.6fr;
+	align-items: center;
+	column-gap: 1.1rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+}
+
+.thead {
+	background: #2d2946;
+	color: var(--grey-medium);
+	padding: 0.8rem 1rem;
+	border-radius: 8px 8px 0 0;
+	font-weight: 500;
+}
+
+.trow {
+	background: #1e1c33;
+	color: var(--main-white);
+	padding: 0.7rem 1rem 0.7rem 1rem;
+	border-top: 1px solid #2d2946;
+	min-height: 44px;
+}
+
+.trow > div {
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-height: 32px;
+}
+
+.actions { 
+	display: flex; 
+	gap: 0.5rem; 
+	flex-wrap: wrap;
+}
+
+/* Responsive design for GestionarUsuarios */
+@media (max-width: 1024px) {
+	.page-container {
+		padding: 1.5rem;
+	}
+	
+	.filters-row {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 0.6rem;
+	}
+	
+	.thead, .trow {
+		grid-template-columns: 0.8fr 2fr 2.2fr 1.2fr 1fr 1.3fr;
+		font-size: 0.93rem;
+		column-gap: 0.7rem;
+	}
+}
+
+
+@media (max-width: 900px) {
+	.users-card {
+		padding: 0.7rem;
+		border-radius: 10px;
+	}
+	.table {
+		min-width: 500px;
+		overflow-x: auto;
+		display: block;
+	}
+	.thead, .trow {
+		font-size: 0.92rem;
+		column-gap: 0.5rem;
+		padding: 0.5rem 0.3rem;
+	}
+	.filters-row {
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.page-container {
+		padding: 0.5rem;
+	}
+	.users-card {
+		padding: 0.5rem;
+		border-radius: 8px;
+	}
+	.page-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.7rem;
+	}
+	.page-header h1 {
+		font-size: 1.1rem;
+	}
+	.filters-row {
+		grid-template-columns: 1fr;
+		gap: 0.4rem;
+	}
+	.table {
+		min-width: 350px;
+		overflow-x: auto;
+		display: block;
+	}
+	.thead, .trow {
+		grid-template-columns: 1.2fr 2fr 1.5fr 1fr;
+		font-size: 0.8rem;
+		padding: 0.5rem 0.2rem;
+		column-gap: 0.3rem;
+	}
+	/* Ocultar columnas menos importantes */
+	.thead > div:nth-child(4),
+	.thead > div:nth-child(5),
+	.thead > div:nth-child(6),
+	.trow > div:nth-child(4),
+	.trow > div:nth-child(5),
+	.trow > div:nth-child(6) {
+		display: none;
+	}
+	.actions {
+		flex-direction: column;
+		gap: 0.2rem;
+		min-width: 90px;
+	}
+}
+
+@media (max-width: 480px) {
+	.page-container {
+		padding: 0.5rem;
+	}
+	
+	.users-card {
+		padding: 0.8rem;
+	}
+	
+	.table {
+		min-width: 400px;
+	}
+	
+	.thead, .trow {
+		grid-template-columns: 1fr 2.5fr 1.5fr 1.5fr;
+		font-size: 0.8rem;
+		padding: 0.6rem 0.3rem;
+	}
+	
+	/* Hide even more columns on very small screens */
+	.thead > div:nth-child(4),
+	.thead > div:nth-child(7),
+	.trow > div:nth-child(4),
+	.trow > div:nth-child(7) {
+		display: none;
+	}
+	
+	.actions {
+		flex-direction: column;
+		gap: 0.3rem;
+	}
+}

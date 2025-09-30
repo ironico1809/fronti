@@ -1,0 +1,53 @@
+@import '../../styles/variables.css';
+.dashboard-alert {
+  background: #2d2946;
+  border-radius: 18px;
+  padding: 1.5em 2em;
+  margin: 0.7em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.dashboard-alert-title {
+  color: var(--main-white);
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.dashboard-alert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dashboard-alert-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.7em 0.5em;
+  border-radius: 12px;
+  margin-bottom: 0.7em;
+}
+.dashboard-alert-danger {
+  background: #3a1e1e;
+  color: #e53e3e;
+}
+.dashboard-alert-warning {
+  background: #3a2e1e;
+  color: var(--main-accent);
+}
+.dashboard-alert-success {
+  background: #1e3a1e;
+  color: #38b000;
+}
+.dashboard-alert-info {
+  background: #23213a;
+  color: var(--main-white);
+}
+.dashboard-alert-icon {
+  font-size: 1.2em;
+}
+.dashboard-alert-desc {
+  flex: 1;
+}
+.dashboard-alert-time {
+  color: var(--grey-medium);
+  font-size: 0.95em;
+}

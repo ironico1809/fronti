@@ -1,0 +1,1 @@
+Coloca aquí la lógica de conexión a APIs y servicios externos.

@@ -1,0 +1,54 @@
+@import '../styles/variables.css';
+
+.custom-card {
+  background: #23213a;
+  border-radius: 20px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  padding: 2.5em 2.5em 2em 2.5em;
+  min-width: 200px;
+  max-width: 5000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  box-sizing: border-box;
+}
+
+/* Card responsive design */
+@media (max-width: 1024px) {
+  .custom-card {
+    padding: 2.2em 2.2em 1.8em 2.2em;
+    min-width: 320px;
+    max-width: 380px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-card {
+    padding: 2em 1.8em 1.6em 1.8em;
+    min-width: 280px;
+    max-width: 100%;
+    border-radius: 16px;
+    gap: 1em;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-card {
+    padding: 1.5em 1.2em 1.2em 1.2em;
+    min-width: unset;
+    border-radius: 14px;
+    gap: 0.8em;
+    margin: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .custom-card {
+    padding: 1.2em 1em 1em 1em;
+    border-radius: 12px;
+  }
+}

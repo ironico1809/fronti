@@ -1,0 +1,279 @@
+@import '../styles/variables.css';
+
+/* IMPORTANTE: NO usar pagos-bg, usar el DashboardLayout */
+
+/* Contenedor principal que funciona con DashboardLayout */
+.pagos-container { 
+	padding: 2rem; 
+	display: flex; 
+	flex-direction: column; 
+	gap: 1.5rem; 
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.panel { 
+	background: #2a2749; 
+	border-radius: 12px; 
+	box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
+	padding: 1.5rem; 
+	overflow-x: auto;
+	border: 1px solid #3c3961;
+}
+
+.panel-header h2 { 
+	margin: 0 0 0.3rem 0; 
+	color: var(--main-white);
+	font-size: 1.4rem;
+	font-weight: 700;
+}
+
+.panel-header p { 
+	margin: 0 0 1rem 0; 
+	color: var(--grey-medium);
+	font-size: 1rem;
+}
+
+.panel-actions { 
+	display: flex; 
+	gap: 0.5rem; 
+	margin-bottom: 0.6rem; 
+	flex-wrap: wrap;
+}
+
+.pagos-grid { 
+	display: grid; 
+	grid-template-columns: 30px 120px minmax(240px,1fr) 120px 130px 130px 130px; 
+	column-gap: 0.7rem; 
+	align-items: center; 
+	min-width: 750px;
+}
+
+.pagos-thead { 
+	background: #2d2946; 
+	color: var(--grey-medium); 
+	font-weight: 700; 
+	padding: 0.5rem 0.7rem; 
+	border-radius: 8px 8px 0 0; 
+	border-bottom: 2px solid #3c3961;
+}
+
+.pagos-row { 
+	background: #1e1c33; 
+	color: var(--main-white); 
+	padding: 0.5rem 0.7rem; 
+	border-top: 1px solid rgba(60, 57, 97, 0.3);
+	transition: background 0.15s ease-in-out;
+}
+
+.pagos-row:hover {
+	background: #252240;
+	border-top: 1px solid rgba(60, 57, 97, 0.5);
+}
+
+.pagos-row:last-child { 
+	border-radius: 0 0 8px 8px; 
+}
+
+.pagos-concepto { 
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+}
+
+.pagos-monto { 
+	text-align: right; 
+	font-variant-numeric: tabular-nums; 
+	color: var(--main-accent);
+	font-weight: 600;
+}
+
+.pagos-thead > div:nth-child(6) { 
+	text-align: right; 
+}
+
+.pagos-row .badge { 
+	padding: 0.18em 0.55em; 
+	font-size: 0.75rem; 
+	border-radius: 5px;
+}
+
+.tabs { 
+	display: flex; 
+	gap: 0.6rem; 
+	margin: 0.6rem 0; 
+	flex-wrap: wrap;
+}
+
+.tab { 
+	background: transparent; 
+	color: var(--main-white); 
+	border: 2px solid #6a658c; 
+	border-radius: 12px; 
+	padding: 0.5rem 0.9rem; 
+	cursor: pointer; 
+}
+
+.tab.active { 
+	border-color: var(--main-accent); 
+	box-shadow: 0 0 0 2px rgba(255,185,2,0.2) inset; 
+}
+
+.pay-form { 
+	display: grid; 
+	grid-template-columns: 1fr; 
+	gap: 0.6rem; 
+	margin-top: 0.4rem; 
+}
+
+.two-cols { 
+	display: grid; 
+	grid-template-columns: 1fr 1fr; 
+	gap: 0.6rem; 
+}
+
+.bank-box, .qr-box { 
+	background: #1e1c33; 
+	border-radius: 12px; 
+	padding: 0.8rem; 
+	color: var(--main-white); 
+}
+
+.qr-placeholder { 
+	width: 120px; 
+	height: 120px; 
+	border-radius: 12px; 
+	background: #2d2946; 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+	font-weight: 800; 
+	letter-spacing: 0.15em; 
+}
+
+.hint { 
+	color: var(--grey-medium); 
+	margin-top: 0.4rem; 
+}
+
+.pay-btn { 
+	width: 100%; 
+	margin-top: 0.8rem; 
+}
+
+.legal-note { 
+	color: var(--grey-medium); 
+	font-size: 0.9rem; 
+	margin-top: 0.4rem; 
+}
+
+/* Responsive design mejorado para usar con DashboardLayout */
+@media (max-width: 1024px) {
+	.pagos-container {
+		padding: 1.5rem;
+		max-width: 1000px;
+	}
+	
+	.pagos-grid { 
+		grid-template-columns: 30px 120px minmax(200px,1fr) 120px 130px 130px 130px; 
+		column-gap: 0.7rem; 
+		min-width: 700px;
+		font-size: 0.9rem;
+	}
+	
+	.panel {
+		padding: 1.2rem;
+	}
+}
+
+@media (max-width: 768px) {
+	/* En móvil el DashboardLayout ajusta automáticamente el margen */
+	.pagos-container {
+		padding: 1rem;
+		max-width: none;
+	}
+	
+	.panel {
+		padding: 1rem;
+		border-radius: 10px;
+	}
+	
+	.panel-actions {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	
+	.pagos-grid { 
+		grid-template-columns: 28px 100px minmax(180px,1fr) 100px 110px 110px; 
+		column-gap: 0.5rem; 
+		min-width: 600px;
+		font-size: 0.85rem;
+	}
+	
+	/* Ocultar una columna en tablet */
+	.pagos-grid > div:nth-child(7),
+	.pagos-thead > div:nth-child(7),
+	.pagos-row > div:nth-child(7) {
+		display: none;
+	}
+	
+	.two-cols { 
+		grid-template-columns: 1fr; 
+	}
+	
+	.tabs {
+		flex-direction: column;
+	}
+	
+	.tab {
+		text-align: center;
+	}
+	
+	.qr-placeholder {
+		width: 100px;
+		height: 100px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.pagos-container {
+		padding: 0.8rem;
+	}
+	
+	.panel {
+		padding: 0.8rem;
+	}
+	
+	.pagos-grid { 
+		grid-template-columns: 24px minmax(150px,1fr) 90px 100px; 
+		column-gap: 0.4rem; 
+		min-width: 400px;
+		font-size: 0.8rem;
+	}
+	
+	/* Ocultar más columnas en móvil */
+	.pagos-grid > div:nth-child(2),
+	.pagos-grid > div:nth-child(5),
+	.pagos-grid > div:nth-child(6),
+	.pagos-thead > div:nth-child(2),
+	.pagos-thead > div:nth-child(5),
+	.pagos-thead > div:nth-child(6),
+	.pagos-row > div:nth-child(2),
+	.pagos-row > div:nth-child(5),
+	.pagos-row > div:nth-child(6) {
+		display: none;
+	}
+	
+	.qr-placeholder {
+		width: 80px;
+		height: 80px;
+		font-size: 0.7rem;
+	}
+	
+	.panel-header h2 {
+		font-size: 1.2rem;
+	}
+}

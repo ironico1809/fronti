@@ -1,0 +1,114 @@
+.camara-local-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #3c3961;
+  border-radius: 12px;
+  padding: 20px 24px 24px 24px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+}
+.camara-local-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.camara-local-icon {
+  font-size: 36px;
+  background: #2a2749;
+  border-radius: 8px;
+  padding: 8px;
+  color: var(--main-accent, #ffb902);
+  border: 1px solid rgba(255, 185, 2, 0.2);
+}
+.camara-local-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--main-white, #fff);
+  margin: 0 0 2px 0;
+}
+.camara-local-desc {
+  color: var(--grey-medium, #b0b0b0);
+  font-size: 14px;
+  margin: 0;
+}
+.camara-local-video-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 240px;
+  justify-content: center;
+}
+.camara-local-video {
+  width: 320px;
+  height: 240px;
+  border-radius: 8px;
+  border: 1px solid #3c3961;
+  background: #18162c;
+  object-fit: cover;
+}
+.camara-local-loading {
+  color: var(--main-accent, #ffb902);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.camara-local-error {
+  color: #ff4d4f;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.camara-local-select {
+  background: #2a2749;
+  border: 1px solid #3c3961;
+  color: var(--main-white, #fff);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  min-width: 180px;
+  margin-bottom: 8px;
+}
+.camara-local-select:focus {
+  outline: none;
+  border-color: var(--main-accent, #ffb902);
+}
+.camara-local-label {
+  color: var(--main-accent, #ffb902);
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-align: center;
+}
+.camara-local-horizontal {
+  flex-direction: row;
+  align-items: center;
+  max-width: 600px;
+}
+.camara-local-video-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.camara-local-toggle {
+  background: var(--main-accent, #ffb902);
+  color: #2a2749;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+.camara-local-toggle:hover {
+  background: #ffd966;
+}
+.camara-local-off {
+  color: #ff4d4f;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 16px;
+}

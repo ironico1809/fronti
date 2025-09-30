@@ -1,0 +1,12 @@
+.camaras-locales-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+}
+.camaras-locales-grid-item {
+  flex: 1 1 0;
+  min-width: 340px;
+  max-width: 420px;
+}

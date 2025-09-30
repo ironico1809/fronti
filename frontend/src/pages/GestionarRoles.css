@@ -1,0 +1,344 @@
+@import '../styles/variables.css';
+
+/* Contenedor expandido un poco hacia la derecha */
+.roles-container { 
+  padding: 1rem 3rem 1rem 0.2rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  max-width: none;
+  display: block;
+}
+
+/* Card principal expandido moderadamente */
+.roles-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 0 0 0;
+}
+
+.page-header {
+  margin-bottom: 1.2rem;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1.5rem 0 0.5rem;
+}
+
+.page-header h1 {
+  color: var(--main-white); 
+  margin: 0; 
+  font-size: 1.6rem; 
+  font-weight: 600;
+}
+
+.roles-subtitle { 
+  color: var(--grey-medium); 
+  margin: 0.5rem 0 0; 
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 95%;
+  word-wrap: break-word;
+  text-align: left;
+  padding-right: 1.5rem;
+}
+
+.roles-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.8rem; 
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  align-items: start;
+  padding: 0 1.5rem 0 0.5rem;
+}
+
+.roles-panel { 
+  background: #272444; 
+  border-radius: 10px; 
+  padding: 1rem; 
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.1);
+  min-width: 0;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+
+.roles-panel:hover {
+  transform: translateY(-1px);
+}
+
+.roles-panel h2 { 
+  color: var(--main-white); 
+  margin: 0 0 0.5rem; 
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.panel-subtitle { 
+  color: var(--grey-medium); 
+  margin: 0 0 0.8rem; 
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.users-scroll { 
+  max-height: 350px; 
+  overflow: auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.4rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.user-item { 
+  background: #1f1d35; 
+  border-radius: 6px; 
+  padding: 0.6rem; 
+  cursor: pointer; 
+  border: 2px solid transparent; 
+  transition: all 0.2s ease;
+  min-width: 0;
+  word-wrap: break-word;
+}
+
+.user-item:hover { 
+  background: #2b284b; 
+}
+
+.user-item.selected { 
+  border: 2px solid var(--main-accent); 
+  background: #302c53; 
+}
+
+.user-name { 
+  color: var(--main-white); 
+  font-weight: 600; 
+  font-size: 0.9rem;
+}
+
+.user-email, .user-role { 
+  color: var(--grey-medium); 
+  font-size: 0.8rem;
+}
+
+.assignment .two-cols { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 0.6rem; 
+  margin-bottom: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field { 
+  margin: 0.5rem 0; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field-label { 
+  color: var(--grey-medium); 
+  font-weight: 500; 
+  margin-bottom: 0.3rem; 
+  display: block; 
+  font-size: 0.85rem;
+}
+
+.pill { 
+  background: #1f1d35; 
+  color: var(--main-white); 
+  border-radius: 6px; 
+  padding: 0.3rem 0.5rem; 
+  font-size: 0.8rem;
+}
+
+.select { 
+  background: var(--blue-mid); 
+  color: var(--main-white); 
+  border: 1.5px solid var(--blue-mid); 
+  padding: 0.4rem; 
+  border-radius: 6px; 
+  outline: none; 
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.hint { 
+  color: var(--grey-medium); 
+  font-size: 0.7rem; 
+  margin: 0.2rem 0 0; 
+  line-height: 1.2;
+}
+
+.permissions-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 0.6rem; 
+  margin-top: 0.6rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.perm-item { 
+  background: #1f1d35; 
+  border-radius: 6px; 
+  padding: 0.5rem; 
+  transition: background-color 0.2s ease;
+}
+
+.perm-item:hover {
+  background: #2b284b;
+}
+
+.perm-label { 
+  color: var(--main-white); 
+  font-weight: 500; 
+  font-size: 0.85rem;
+}
+
+.perm-code { 
+  color: var(--grey-medium); 
+  font-weight: 500; 
+  font-size: 0.75rem; 
+  margin-left: 0.3em; 
+}
+
+.actions-row { 
+  display: flex; 
+  gap: 0.5rem; 
+  justify-content: flex-end; 
+  margin-top: 0.8rem; 
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.actions-row button {
+  min-width: 85px;
+  max-width: 115px;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1200px) {
+  .roles-container {
+    padding: 1rem 2.5rem 1rem 0.1rem;
+    max-width: none;
+  }
+  .roles-card {
+    max-width: 1000px;
+    margin: 0 0 0 0;
+  }
+  .page-header {
+    padding: 0 1.2rem 0 0.3rem;
+  }
+  .roles-subtitle {
+    padding-right: 1.2rem;
+    max-width: 85%;
+  }
+  .roles-grid { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.2rem;
+    padding: 0 1.2rem 0 0.3rem;
+  }
+  .actions-row {
+    gap: 0.4rem;
+  }
+  .actions-row button {
+    min-width: 75px;
+    max-width: 100px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .roles-container {
+    padding: 0.8rem 1.2rem 0.8rem 0.1rem;
+    max-width: 100%;
+  }
+  .roles-card {
+    padding: 0.8rem;
+    max-width: none;
+    margin: 0;
+  }
+  .page-header {
+    padding: 0 0.3rem 0 0.2rem;
+  }
+  .roles-grid { 
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+    padding: 0 0.3rem 0 0.2rem;
+  }
+  .page-header h1 {
+    font-size: 1.4rem;
+  }
+  .roles-subtitle {
+    font-size: 0.8rem;
+  }
+  .actions-row {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .roles-container {
+    padding: 0.5rem 1rem 0.5rem 0.1rem;
+  }
+  .roles-card {
+    padding: 0.6rem;
+  }
+  .page-header {
+    padding: 0 0.2rem 0 0.1rem;
+  }
+  .roles-panel {
+    padding: 0.6rem;
+  }
+  .roles-grid {
+    padding: 0 0.2rem 0 0.1rem;
+  }
+  .permissions-grid {
+    grid-template-columns: 1fr;
+  }
+  .assignment .two-cols {
+    grid-template-columns: 1fr;
+  }
+  .page-header h1 {
+    font-size: 1.3rem;
+  }
+  .roles-subtitle {
+    font-size: 0.75rem;
+  }
+  .actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3rem;
+  }
+  .actions-row button {
+    width: 100%;
+    max-width: none;
+  }
+}

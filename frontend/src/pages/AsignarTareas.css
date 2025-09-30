@@ -1,0 +1,504 @@
+/* Estilos para AsignarTareas.js - CU-23 */
+/* Usando la paleta de colores REAL del sistema */
+
+@import '../styles/variables.css';
+
+.tareas-card {
+  width: 100%;
+  max-width: 1100px;
+  min-height: calc(100vh - 70px);
+  margin: 0;
+  padding: 24px 0;
+  background: transparent;
+  color: var(--main-white);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 0;
+}
+
+.page-header {
+  background: #2a2749;
+  border: 1px solid #3c3961;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.page-header h1 {
+  color: var(--main-white);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.tareas-subtitle {
+  color: var(--grey-medium);
+  margin: 0;
+  font-size: 16px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Panel de filtros */
+.filtros-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 15px;
+}
+
+.filtro-group label {
+  display: block;
+  color: var(--main-white);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.filtro-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #3c3961;
+  border-radius: 6px;
+  background: #2a2749;
+  color: var(--main-white);
+  font-size: 14px;
+}
+
+.filtro-select:focus {
+  outline: none;
+  border-color: var(--main-accent);
+}
+
+.filtros-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.resultados-count {
+  color: var(--grey-medium);
+  font-size: 14px;
+}
+
+/* Estadísticas */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  color: var(--main-white);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.stat-pendientes {
+  background: rgba(255, 224, 102, 0.1);
+  border-color: rgba(255, 224, 102, 0.3);
+}
+
+.stat-asignadas {
+  background: rgba(56, 176, 0, 0.1);
+  border-color: rgba(56, 176, 0, 0.3);
+}
+
+.stat-progreso {
+  background: rgba(255, 185, 2, 0.1);
+  border-color: rgba(255, 185, 2, 0.2);
+}
+
+.stat-urgentes {
+  background: rgba(220, 53, 69, 0.1);
+  border-color: rgba(220, 53, 69, 0.3);
+}
+
+.stat-icon {
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+.stat-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 5px;
+  color: var(--main-white);
+}
+
+.stat-info span {
+  font-size: 12px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--grey-medium);
+}
+
+/* Lista de tareas */
+.tareas-lista {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.lista-header {
+  background: rgba(255, 185, 2, 0.1);
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 185, 2, 0.1);
+}
+
+.lista-header h2 {
+  color: var(--main-white);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tabla-container {
+  overflow-x: auto;
+}
+
+.tabla-tareas {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-tareas th {
+  background: rgba(255, 185, 2, 0.15);
+  color: var(--main-white);
+  font-weight: 600;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #3c3961;
+  white-space: nowrap;
+}
+
+.tabla-tareas td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(60, 57, 97, 0.5);
+  color: var(--main-white);
+  background: transparent;
+  vertical-align: top;
+}
+
+.tabla-tareas tr:hover td {
+  background: rgba(255, 185, 2, 0.05);
+}
+
+.tarea-info {
+  max-width: 200px;
+}
+
+.tarea-info strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--main-white);
+}
+
+.tarea-descripcion {
+  font-size: 12px;
+  color: var(--grey-medium);
+  line-height: 1.3;
+}
+
+.activo-nombre {
+  font-weight: 500;
+  color: var(--main-accent);
+  max-width: 150px;
+}
+
+.fecha-limite {
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.sin-asignar {
+  color: var(--grey-medium);
+  font-style: italic;
+}
+
+/* Badges */
+.badge-prioridad, .badge-estado {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prioridad-baja {
+  background: rgba(108, 117, 125, 0.2);
+  color: #6c757d;
+  border: 1px solid rgba(108, 117, 125, 0.3);
+}
+
+.prioridad-media {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.prioridad-alta {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ff9800;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.prioridad-urgente {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.estado-pendiente {
+  background: rgba(255, 224, 102, 0.2);
+  color: #ffe066;
+  border: 1px solid rgba(255, 224, 102, 0.3);
+}
+
+.estado-asignada {
+  background: rgba(13, 202, 240, 0.2);
+  color: #0dcaf0;
+  border: 1px solid rgba(13, 202, 240, 0.3);
+}
+
+.estado-progreso {
+  background: rgba(255, 185, 2, 0.2);
+  color: var(--main-accent);
+  border: 1px solid rgba(255, 185, 2, 0.3);
+}
+
+.estado-completada {
+  background: rgba(56, 176, 0, 0.2);
+  color: var(--success);
+  border: 1px solid rgba(56, 176, 0, 0.3);
+}
+
+.estado-cancelada {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Acciones */
+.acciones-tarea {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.btn-asignar {
+  background: var(--main-accent) !important;
+  color: #171528 !important;
+  border: none !important;
+  padding: 4px 8px !important;
+  font-size: 11px !important;
+}
+
+.btn-editar {
+  background: rgba(13, 202, 240, 0.8) !important;
+  color: var(--main-white) !important;
+  border: none !important;
+  padding: 4px 8px !important;
+  font-size: 11px !important;
+}
+
+.btn-iniciar {
+  background: var(--success) !important;
+  color: var(--main-white) !important;
+  border: none !important;
+  padding: 4px 8px !important;
+  font-size: 11px !important;
+}
+
+/* Formularios en modales */
+.modal-form {
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--main-white);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 12px;
+  border: 1px solid #3c3961;
+  border-radius: 6px;
+  background: #2a2749;
+  color: var(--main-white);
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--main-accent);
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #3c3961;
+  border-radius: 6px;
+  background: #2a2749;
+  color: var(--main-white);
+  font-size: 14px;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--main-accent);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(60, 57, 97, 0.3);
+}
+
+.tarea-asignar-info {
+  background: rgba(255, 185, 2, 0.1);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 185, 2, 0.2);
+}
+
+.tarea-asignar-info h3 {
+  color: var(--main-white);
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.tarea-asignar-info p {
+  margin: 5px 0;
+  color: var(--grey-medium);
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tareas-card {
+    padding: 15px 0;
+    max-width: 100%;
+  }
+  
+  .page-header {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .page-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .filtros-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .stat-card {
+    padding: 15px;
+  }
+  
+  .filtros-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tabla-tareas {
+    font-size: 12px;
+  }
+  
+  .tabla-tareas th,
+  .tabla-tareas td {
+    padding: 8px 10px;
+  }
+  
+  .tarea-info {
+    max-width: 150px;
+  }
+  
+  .acciones-tarea {
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

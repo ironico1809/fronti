@@ -1,0 +1,446 @@
+/* Estilos para GenerarReportes.js - CU-16 */
+/* Usando la paleta de colores REAL del sistema */
+
+@import '../styles/variables.css';
+
+.reportes-card {
+  width: 100%;
+  max-width: 1100px;
+  min-height: calc(100vh - 70px);
+  margin: 0;
+  padding: 24px 0;
+  background: transparent;
+  color: var(--main-white);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 0;
+}
+
+.page-header {
+  background: #2a2749;
+  border: 1px solid #3c3961;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.page-header h1 {
+  color: var(--main-white);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.reportes-subtitle {
+  color: var(--grey-medium);
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Panel de filtros */
+.filtros-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 20px;
+}
+
+.filtro-group label {
+  display: block;
+  color: var(--main-white);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.filtro-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #3c3961;
+  border-radius: 6px;
+  background: #2a2749;
+  color: var(--main-white);
+  font-size: 14px;
+}
+
+.filtro-select:focus {
+  outline: none;
+  border-color: var(--main-accent);
+}
+
+.filtros-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vista-toggle {
+  display: flex;
+  gap: 5px;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: 1px solid #3c3961;
+  background: #2a2749;
+  color: var(--main-white);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 185, 2, 0.1);
+  border-color: var(--main-accent);
+}
+
+.toggle-btn.active {
+  background: var(--main-accent);
+  color: #171528;
+  border-color: var(--main-accent);
+}
+
+/* Métricas resumen */
+.metricas-resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 30px;
+}
+
+.metrica-card {
+  background: rgba(255, 185, 2, 0.1);
+  border: 1px solid rgba(255, 185, 2, 0.2);
+  color: var(--main-white);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.2s;
+}
+
+.metrica-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.metrica-card:nth-child(2) {
+  background: rgba(56, 176, 0, 0.1);
+  border-color: rgba(56, 176, 0, 0.3);
+}
+
+.metrica-card:nth-child(3) {
+  background: rgba(68, 65, 101, 0.3);
+  border-color: rgba(68, 65, 101, 0.5);
+}
+
+.metrica-card:nth-child(4) {
+  background: rgba(255, 224, 102, 0.1);
+  border-color: rgba(255, 224, 102, 0.3);
+}
+
+.metrica-icon {
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+.metrica-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 5px;
+  color: var(--main-white);
+}
+
+.metrica-info span {
+  font-size: 12px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--grey-medium);
+}
+
+/* Contenido del reporte */
+.reporte-contenido {
+  margin-top: 20px;
+}
+
+.reporte-seccion {
+  margin-bottom: 30px;
+}
+
+.seccion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.seccion-header h2 {
+  color: var(--main-white);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Tabla de reportes */
+.tabla-reporte {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #3c3961;
+  background: #2a2749;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.tabla-reporte table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-reporte th {
+  background: rgba(255, 185, 2, 0.15);
+  color: var(--main-white);
+  font-weight: 600;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #3c3961;
+  white-space: nowrap;
+}
+
+.tabla-reporte td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(60, 57, 97, 0.5);
+  color: var(--main-white);
+  background: transparent;
+}
+
+.tabla-reporte tr:hover td {
+  background: rgba(255, 185, 2, 0.05);
+}
+
+.area-nombre {
+  font-weight: 500;
+  color: var(--main-accent);
+}
+
+.usuario-nombre {
+  font-weight: 500;
+  color: var(--main-accent);
+}
+
+.confirmadas {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.canceladas {
+  color: var(--error);
+  font-weight: 500;
+}
+
+.ingresos {
+  color: var(--main-accent);
+  font-weight: 600;
+}
+
+.posicion {
+  color: var(--main-accent);
+  font-weight: 600;
+}
+
+.tendencia-up {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.tendencia-down {
+  color: var(--error);
+  font-weight: 500;
+}
+
+/* Gráficos */
+.grafico-placeholder {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.chart-container h3 {
+  color: var(--main-white);
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+
+/* Gráfica mejorada */
+.chart-bars-enhanced {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0;
+  height: 240px;
+  position: relative;
+  margin-bottom: 24px;
+}
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 200px;
+  margin-right: 10px;
+  font-size: 13px;
+  color: var(--grey-medium);
+  font-weight: 600;
+}
+.bars-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  height: 200px;
+  min-width: 0;
+}
+.chart-bar-enhanced {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  min-width: 60px;
+  position: relative;
+}
+.bar.enhanced {
+  width: 40px;
+  border-radius: 6px 6px 0 0;
+  min-height: 10px;
+  box-shadow: 0 2px 8px rgba(255, 185, 2, 0.18);
+  margin-bottom: 4px;
+  transition: height 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.bar-value-top {
+  font-weight: 700;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 2px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+}
+.bar-label {
+  font-size: 13px;
+  color: var(--grey-medium);
+  text-align: center;
+  max-width: 80px;
+  word-wrap: break-word;
+  margin-top: 4px;
+}
+.x-axis {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffb90244 0%, #fff0 100%);
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .bars-wrapper {
+    gap: 12px;
+  }
+  .chart-bar-enhanced {
+    width: 40px;
+    min-width: 40px;
+  }
+  .bar.enhanced {
+    width: 24px;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .reportes-card {
+    padding: 15px 0;
+    max-width: 100%;
+  }
+  
+  .page-header {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .page-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .filtros-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .metricas-resumen {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrica-card {
+    padding: 15px;
+  }
+  
+  .seccion-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .export-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .tabla-reporte {
+    font-size: 12px;
+  }
+  
+  .tabla-reporte th,
+  .tabla-reporte td {
+    padding: 8px 10px;
+  }
+  
+  .chart-bars {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .chart-bar {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .bar {
+    width: 60%;
+    height: 30px;
+    border-radius: 0 4px 4px 0;
+  }
+}

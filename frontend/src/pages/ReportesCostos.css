@@ -1,0 +1,674 @@
+/* ReportesCostos.css - Reportes de Costos de Reparaciones */
+/* Usando la paleta de colores REAL del sistema - igual que GenerarReportes */
+
+@import '../styles/variables.css';
+
+.reportes-costos-page {
+  width: 100%;
+  max-width: 1100px;
+  min-height: calc(100vh - 70px);
+  margin: 0;
+  padding: 24px 0;
+  background: transparent;
+  color: var(--main-white);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 0;
+}
+
+/* Header Section */
+.reportes-costos-header {
+  background: #2a2749;
+  border: 1px solid #3c3961;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.reportes-costos-title {
+  color: var(--main-white);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.reportes-costos-subtitle {
+  color: var(--grey-medium);
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Filters Card */
+.reportes-costos-filters-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.reportes-costos-filters-title {
+  color: var(--main-white);
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.reportes-costos-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 20px;
+}
+
+.reportes-costos-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reportes-costos-filter-label {
+  display: block;
+  color: var(--main-white);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.reportes-costos-filter-select,
+.reportes-costos-date-input input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #3c3961;
+  border-radius: 6px;
+  background: #2a2749;
+  color: var(--main-white);
+  font-size: 14px;
+}
+
+.reportes-costos-filter-select:focus,
+.reportes-costos-date-input input:focus {
+  outline: none;
+  border-color: var(--main-accent);
+}
+
+.reportes-costos-filter-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reportes-costos-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.reportes-costos-checkbox-text {
+  color: var(--main-white);
+  font-size: 14px;
+}
+
+.reportes-costos-export-btn {
+  padding: 8px 16px;
+  background: var(--main-accent);
+  color: #171528;
+  border: 1px solid var(--main-accent);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.reportes-costos-export-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 185, 2, 0.3);
+}
+
+/* Stats Grid */
+.reportes-costos-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 30px;
+}
+
+.reportes-costos-stat-card {
+  background: rgba(255, 185, 2, 0.1);
+  border: 1px solid rgba(255, 185, 2, 0.2);
+  color: var(--main-white);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.2s;
+}
+
+.reportes-costos-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.reportes-costos-stat-card:nth-child(2) {
+  background: rgba(56, 176, 0, 0.1);
+  border-color: rgba(56, 176, 0, 0.3);
+}
+
+.reportes-costos-stat-card:nth-child(3) {
+  background: rgba(68, 65, 101, 0.3);
+  border-color: rgba(68, 65, 101, 0.5);
+}
+
+.reportes-costos-stat-card:nth-child(4) {
+  background: rgba(255, 224, 102, 0.1);
+  border-color: rgba(255, 224, 102, 0.3);
+}
+
+.reportes-costos-stat-icon {
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+.reportes-costos-stat-info {
+  flex: 1;
+}
+
+.reportes-costos-stat-title {
+  font-size: 12px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--grey-medium);
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.reportes-costos-stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--main-white);
+}
+
+/* Warnings Card */
+.reportes-costos-warnings-card {
+  background: rgba(255, 224, 102, 0.1);
+  border: 1px solid rgba(255, 224, 102, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.reportes-costos-warnings-title {
+  color: var(--main-white);
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reportes-costos-warnings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reportes-costos-warning-item {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+}
+
+.reportes-costos-warning-icon {
+  font-size: 20px;
+  color: var(--main-accent);
+}
+
+.reportes-costos-warning-content {
+  flex: 1;
+}
+
+.reportes-costos-warning-activo {
+  color: var(--main-white);
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  font-size: 16px;
+}
+
+.reportes-costos-warning-desc {
+  color: var(--grey-medium);
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.reportes-costos-warning-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.reportes-costos-warning-type {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 185, 2, 0.2);
+  color: var(--main-accent);
+}
+
+.reportes-costos-warning-date {
+  font-size: 12px;
+  color: var(--grey-medium);
+}
+
+.reportes-costos-warning-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.reportes-costos-warning-status.status-en_proceso {
+  background: rgba(255, 224, 102, 0.2);
+  color: var(--yellow-light);
+}
+
+.reportes-costos-warning-status.status-finalizada {
+  background: rgba(56, 176, 0, 0.2);
+  color: var(--success);
+}
+
+/* Trends Card, Breakdown Card, Details Card */
+.reportes-costos-trends-card,
+.reportes-costos-breakdown-card,
+.reportes-costos-details-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.reportes-costos-trends-title,
+.reportes-costos-breakdown-title,
+.reportes-costos-details-title {
+  color: var(--main-white);
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  font-size: 16px;
+}
+
+/* Charts */
+.reportes-costos-trends-chart {
+  overflow-x: auto;
+}
+
+.reportes-costos-chart-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 185, 2, 0.2);
+  font-weight: 600;
+  color: var(--main-white);
+}
+
+.reportes-costos-chart-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.reportes-costos-chart-row:hover {
+  background-color: rgba(255, 185, 2, 0.05);
+}
+
+.reportes-costos-chart-cell {
+  font-size: 14px;
+  color: var(--main-white);
+}
+
+.reportes-costos-chart-label {
+  font-size: 14px;
+  color: var(--main-white);
+}
+
+/* Breakdown Grid */
+.reportes-costos-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.reportes-costos-breakdown-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.reportes-costos-breakdown-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 185, 2, 0.05);
+}
+
+.reportes-costos-breakdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reportes-costos-breakdown-type {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--main-white);
+  margin: 0;
+}
+
+.reportes-costos-breakdown-count {
+  font-size: 12px;
+  color: var(--grey-medium);
+  background: rgba(255, 185, 2, 0.1);
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.reportes-costos-breakdown-total {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--main-white);
+  margin-bottom: 4px;
+}
+
+.reportes-costos-breakdown-avg {
+  font-size: 14px;
+  color: var(--grey-medium);
+}
+
+/* Table */
+.reportes-costos-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 185, 2, 0.1);
+}
+
+.reportes-costos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.reportes-costos-table th {
+  background: #2a2749;
+  color: var(--main-white);
+  font-weight: 600;
+  padding: 16px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 185, 2, 0.2);
+  white-space: nowrap;
+}
+
+.reportes-costos-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--main-white);
+}
+
+.reportes-costos-table tbody tr:hover {
+  background-color: rgba(255, 185, 2, 0.05);
+}
+
+.reportes-costos-table-date {
+  font-weight: 500;
+  color: var(--main-white);
+  white-space: nowrap;
+}
+
+.reportes-costos-table-activo {
+  font-weight: 500;
+  color: var(--main-white);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reportes-costos-table-desc {
+  color: var(--grey-medium);
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reportes-costos-table-amount {
+  font-weight: 600;
+  color: var(--main-white);
+  text-align: right;
+}
+
+/* Type and Status Badges */
+.reportes-costos-type-badge,
+.reportes-costos-status-badge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.reportes-costos-type-badge.type-preventivo {
+  background: rgba(68, 65, 101, 0.3);
+  color: var(--blue-mid);
+  border: 1px solid rgba(68, 65, 101, 0.5);
+}
+
+.reportes-costos-type-badge.type-correctivo {
+  background: rgba(255, 224, 102, 0.2);
+  color: var(--yellow-light);
+  border: 1px solid rgba(255, 224, 102, 0.4);
+}
+
+.reportes-costos-type-badge.type-emergencia {
+  background: rgba(229, 62, 62, 0.2);
+  color: var(--error);
+  border: 1px solid rgba(229, 62, 62, 0.4);
+}
+
+.reportes-costos-status-badge.status-finalizada {
+  background: rgba(56, 176, 0, 0.2);
+  color: var(--success);
+  border: 1px solid rgba(56, 176, 0, 0.4);
+}
+
+.reportes-costos-status-badge.status-en_proceso {
+  background: rgba(255, 224, 102, 0.2);
+  color: var(--yellow-light);
+  border: 1px solid rgba(255, 224, 102, 0.4);
+}
+
+.reportes-costos-status-badge.status-pendiente {
+  background: rgba(179, 179, 198, 0.2);
+  color: var(--grey-medium);
+  border: 1px solid rgba(179, 179, 198, 0.4);
+}
+
+.reportes-costos-details-btn {
+  padding: 6px 12px;
+  background: rgba(255, 185, 2, 0.1);
+  color: var(--main-accent);
+  border: 1px solid rgba(255, 185, 2, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.reportes-costos-details-btn:hover {
+  background: rgba(255, 185, 2, 0.2);
+  border-color: var(--main-accent);
+}
+
+/* Empty State */
+.reportes-costos-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--grey-medium);
+}
+
+/* Modal Content */
+.reportes-costos-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+}
+
+.reportes-costos-modal-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reportes-costos-modal-field:last-child {
+  border-bottom: none;
+}
+
+.reportes-costos-modal-field label {
+  font-weight: 600;
+  color: var(--main-white);
+  margin-right: 16px;
+}
+
+.reportes-costos-modal-amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--main-accent);
+}
+
+/* Export Modal */
+.reportes-costos-export-content {
+  text-align: center;
+}
+
+.reportes-costos-export-content p {
+  color: var(--main-white);
+  margin-bottom: 20px;
+}
+
+.reportes-costos-export-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reportes-costos-export-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 185, 2, 0.1);
+  color: var(--main-accent);
+  border: 1px solid rgba(255, 185, 2, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.reportes-costos-export-option:hover {
+  background: rgba(255, 185, 2, 0.2);
+  border-color: var(--main-accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reportes-costos-page {
+    padding: 16px 0;
+  }
+
+  .reportes-costos-filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reportes-costos-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reportes-costos-filter-actions {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .reportes-costos-chart-header,
+  .reportes-costos-chart-row {
+    grid-template-columns: 1.5fr 1fr 0.8fr 1fr;
+    font-size: 12px;
+  }
+
+  .reportes-costos-breakdown-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reportes-costos-export-options {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .reportes-costos-title {
+    font-size: 1.5rem;
+  }
+
+  .reportes-costos-stat-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .reportes-costos-warning-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .reportes-costos-warning-meta {
+    justify-content: center;
+  }
+
+  .reportes-costos-modal-field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

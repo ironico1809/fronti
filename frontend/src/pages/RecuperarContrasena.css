@@ -1,0 +1,145 @@
+
+@import '../styles/variables.css';
+
+.recuperar-bg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #171528 0%, #23213a 100%);
+  padding: 2em 0 0 0;
+}
+
+.recuperar-card {
+  max-width: 420px;
+  width: 100%;
+  margin: 2.5em 0 1.2em 0;
+  box-sizing: border-box;
+}
+
+.recuperar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1.2em;
+}
+
+.recuperar-icon {
+  margin-bottom: 0.2em;
+}
+
+.recuperar-title {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--main-white);
+  margin-top: 0.5em;
+  margin-bottom: 0.15em;
+  text-align: center;
+}
+
+.recuperar-subtitle {
+  color: var(--grey-medium);
+  font-size: 1.1em;
+  margin-bottom: 0.2em;
+  text-align: center;
+}
+
+.recuperar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.recuperar-error {
+  color: var(--error);
+  background: #fff0f0;
+  border: 1px solid var(--error);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  font-size: 0.95em;
+  text-align: center;
+}
+
+.recuperar-mensaje {
+  color: var(--success);
+  background: #f0fff0;
+  border: 1px solid var(--success);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  font-size: 0.95em;
+  text-align: center;
+}
+
+.recuperar-btn {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 8px;
+}
+
+.recuperar-footer {
+  color: var(--grey-medium);
+  font-size: 0.98em;
+  text-align: center;
+  margin-top: 0.7em;
+}
+
+.recuperar-volver {
+  color: var(--main-accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.recuperar-copyright {
+  color: var(--grey-medium);
+  font-size: 0.95em;
+  text-align: center;
+  margin-top: 2em;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 600px) {
+  .recuperar-bg {
+    padding: 0.5em 0;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  .recuperar-card {
+    min-width: unset;
+    max-width: 98vw;
+    margin: 2.5em 1.2em 1.2em 1.2em;
+    padding: 1.2em 0.7em 1.2em 0.7em;
+    border-radius: 14px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  .recuperar-header .recuperar-icon svg {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .recuperar-title {
+    font-size: 1.2em;
+  }
+  .recuperar-form {
+    gap: 0.7em;
+    width: 100%;
+    align-items: stretch;
+  }
+  .recuperar-btn {
+    font-size: 1em;
+    padding: 0.7em 0;
+  }
+  .recuperar-footer, .recuperar-copyright {
+    font-size: 0.92em;
+  }
+  .recuperar-error, .recuperar-mensaje {
+    font-size: 0.93em;
+    padding: 0.4em 0.5em;
+  }
+}

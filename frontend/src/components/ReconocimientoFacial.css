@@ -1,0 +1,62 @@
+.reconocimiento-facial-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 24px;
+  background: #23232b;
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 4px 24px #0006;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reconocimiento-facial-form h2 {
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.reconocimiento-facial-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reconocimiento-facial-form input[type="file"] {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.reconocimiento-facial-form button {
+  margin: 8px 4px 0 0;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #3a3a4a;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.reconocimiento-facial-form button:disabled {
+  background: #444;
+  cursor: not-allowed;
+}
+.reconocimiento-facial-form video,
+.reconocimiento-facial-form img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 10px 0;
+  background: #111;
+}
+.reconocimiento-facial-form .resultado {
+  margin-top: 16px;
+  width: 100%;
+  background: #18181f;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+.reconocimiento-facial-form .error {
+  color: #ff4d4f;
+  margin-top: 12px;
+}

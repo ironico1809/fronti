@@ -1,0 +1,52 @@
+@import '../../styles/variables.css';
+.dashboard-activity {
+  background: #2d2946;
+  border-radius: 18px;
+  padding: 1.5em 2em;
+  margin: 0.7em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.dashboard-activity-title {
+  color: var(--main-white);
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.dashboard-activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dashboard-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #39365a;
+}
+.dashboard-activity-item:last-child {
+  border-bottom: none;
+}
+.dashboard-activity-icon {
+  font-size: 1.2em;
+}
+.dashboard-activity-desc {
+  color: var(--main-white);
+  flex: 1;
+}
+.dashboard-activity-time {
+  color: var(--grey-medium);
+  font-size: 0.95em;
+}
+.dashboard-activity-success .dashboard-activity-icon {
+  color: #38b000;
+}
+.dashboard-activity-warning .dashboard-activity-icon {
+  color: var(--main-accent);
+}
+.dashboard-activity-info .dashboard-activity-icon {
+  color: var(--main-white);
+}
+.dashboard-activity-danger .dashboard-activity-icon {
+  color: #e53e3e;
+}

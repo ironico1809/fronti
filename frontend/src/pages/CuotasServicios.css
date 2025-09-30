@@ -1,0 +1,49 @@
+@import '../styles/variables.css';
+
+.finance-bg { min-height: 100vh; display: flex; background: radial-gradient(ellipse 80% 60% at 60% 20%, #23213a 0%, #171528 100%); }
+.cs-container { padding: 1.5rem; }
+.cs-header h1 { color: var(--main-white); margin: 0; font-size: 1.5rem; }
+.cs-header p { color: var(--grey-medium); margin: 0.4rem 0 1rem; }
+
+.cs-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.summary-card { background: #2a2749; border-radius: 14px; padding: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+.summary-title { color: var(--grey-medium); font-weight: 600; }
+.summary-amount { color: var(--main-white); font-size: 1.8rem; font-weight: 900; margin-top: 0.4rem; }
+.summary-note { color: var(--grey-medium); font-size: 0.9rem; }
+
+.cs-filters { display: grid; grid-template-columns: 2fr 1fr 1fr 1.6fr auto; gap: 0.7rem; margin: 1rem 0; align-items: center; }
+.cs-select { background: var(--blue-mid); border: 1.5px solid var(--blue-mid); color: var(--main-white); border-radius: 8px; padding: 0.75rem; outline: none; }
+.cs-dates { background: #1f1d35; border-radius: 10px; padding: 0.25rem 0.5rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.cs-date { background: transparent; color: var(--main-white); border: none; padding: 0.55rem; outline: none; }
+.cs-date-sep { color: var(--grey-medium); text-align: center; }
+
+.cs-export-section {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+.cs-table { width: 100%; }
+.cs-thead, .cs-row {
+	display: grid;
+	grid-template-columns: 90px 110px minmax(220px, 1fr) 110px 130px 110px 110px 220px;
+	column-gap: 0.6rem;
+	align-items: center;
+}
+.cs-thead { background: #2d2946; color: var(--grey-medium); padding: 0.6rem 0.7rem; border-radius: 10px 10px 0 0; font-weight: 700; font-size: 0.95rem; }
+.cs-row { background: #1e1c33; color: var(--main-white); padding: 0.55rem 0.7rem; border-top: 1px solid #2d2946; font-size: 0.95rem; }
+.cs-row:last-child { border-radius: 0 0 10px 10px; }
+.cs-actions { display: flex; gap: 0.4rem; justify-content: flex-start; }
+.cs-actions .custom-button.small { padding: 0.42em 0.9em; font-size: 0.88rem; }
+.cs-row > div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cs-concept { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cs-monto { text-align: right; font-variant-numeric: tabular-nums; }
+.cs-thead > div:nth-child(6) { text-align: right; }
+.cs-row .badge { padding: 0.18em 0.5em; font-size: 0.8rem; }
+
+@media (max-width: 1100px) {
+	.cs-summary { grid-template-columns: 1fr; }
+	.cs-filters { grid-template-columns: 1fr; }
+		.cs-thead, .cs-row { grid-template-columns: 80px 100px minmax(180px,1fr) 100px 120px 100px 100px 200px; }
+}

@@ -1,0 +1,54 @@
+@import '../styles/variables.css';
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--main-white);
+  gap: 0.5em;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: var(--main-bg);
+  border: 2px solid var(--grey-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 0.2s, background 0.2s;
+  font-size: 1em;
+  color: var(--main-white);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background: var(--main-accent);
+  border: 2px solid var(--main-accent);
+  color: var(--main-bg);
+}
+
+.checkmark:after {
+  content: '';
+  display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark:after {
+  content: '\2714';
+  display: block;
+  font-size: 1em;
+  color: var(--main-bg);
+  position: relative;
+  left: 1px;
+  top: -1px;
+}
+
+.checkbox-label {
+  user-select: none;
+}

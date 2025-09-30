@@ -1,0 +1,875 @@
+@import '../styles/variables.css';
+
+/* Contenedor principal */
+.reservas-container { 
+  padding: 1rem 1rem 1rem 0.2rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  max-width: none;
+  display: block;
+}
+
+/* Card principal */
+.reservas-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  width: 250%;
+  max-width: 1000px;
+  margin: 0 0 0 0;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid rgba(255, 185, 2, 0.15);
+}
+
+.page-header h1 {
+  color: var(--main-white); 
+  margin: 0 0 0.8rem 0; 
+  font-size: 2rem; 
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.reservas-subtitle { 
+  color: var(--grey-medium); 
+  font-size: 1rem; 
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Navegación por pasos */
+.steps-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.completed {
+  opacity: 0.8;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 185, 2, 0.2);
+  color: var(--main-white);
+  font-weight: 600;
+  border: 2px solid rgba(255, 185, 2, 0.3);
+}
+
+.step.active .step-number {
+  background: var(--main-accent);
+  color: var(--main-bg);
+  border-color: var(--main-accent);
+}
+
+.step.completed .step-number {
+  background: rgba(40, 167, 69, 0.8);
+  border-color: rgba(40, 167, 69, 0.8);
+}
+
+.step-label {
+  color: var(--grey-medium);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.step.active .step-label {
+  color: var(--main-white);
+}
+
+/* Contenido del paso */
+.step-content {
+  min-height: 400px;
+}
+
+.step-content h2 {
+  color: var(--main-white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+/* Grilla de áreas */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.area-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 185, 2, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.area-card:hover {
+  border-color: var(--main-accent);
+  background: rgba(255, 185, 2, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 185, 2, 0.2);
+}
+
+.area-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: rgba(255, 185, 2, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--main-accent);
+}
+
+.area-info h3 {
+  color: var(--main-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.area-description {
+  color: var(--grey-medium);
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.area-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.area-capacity,
+.area-price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--grey-medium);
+  font-size: 0.85rem;
+}
+
+.area-capacity svg {
+  color: var(--main-accent);
+}
+
+.area-price {
+  color: var(--main-accent);
+  font-weight: 600;
+}
+
+/* Información del área seleccionada */
+.selected-area-info {
+  background: rgba(255, 185, 2, 0.1);
+  border: 1px solid rgba(255, 185, 2, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.selected-area-info h3 {
+  color: var(--main-white);
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.selected-area-info p {
+  color: var(--grey-medium);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Formulario de fecha y hora */
+.datetime-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: var(--main-white);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.form-select {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 185, 2, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--main-white);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffb902' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2rem;
+  padding-right: 3rem;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--main-accent);
+  box-shadow: 0 0 0 3px rgba(255, 185, 2, 0.3);
+  transform: translateY(-1px);
+}
+
+.form-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-select option {
+  background: var(--main-bg);
+  color: var(--main-white);
+  padding: 0.8rem;
+}
+
+.form-select option:disabled {
+  color: var(--grey-medium);
+}
+
+/* Loading availability */
+.loading-availability {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--main-accent);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.spinner {
+  color: var(--main-accent);
+}
+
+/* Inputs del componente Input */
+.reservas-container input[type="text"],
+.reservas-container input[type="date"],
+.reservas-container input[type="time"],
+.reservas-container input[type="number"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 2px solid rgba(255, 185, 2, 0.2) !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+  color: var(--main-white) !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.reservas-container input:focus {
+  outline: none !important;
+  border-color: var(--main-accent) !important;
+  box-shadow: 0 0 0 3px rgba(255, 185, 2, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Resumen de reserva */
+.reservation-summary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 185, 2, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.reservation-summary h3 {
+  color: var(--main-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--grey-medium);
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item.total {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--main-white);
+  border-top: 1px solid rgba(255, 185, 2, 0.3);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+}
+
+.summary-item strong {
+  color: var(--main-white);
+  font-size: 1.1rem;
+  grid-column: 1 / -1;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 185, 2, 0.2);
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Formulario de detalles */
+.details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 185, 2, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--main-white);
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--main-accent);
+  box-shadow: 0 0 0 3px rgba(255, 185, 2, 0.3);
+  transform: translateY(-1px);
+}
+
+.form-textarea::placeholder {
+  color: var(--grey-medium);
+}
+
+.form-group small {
+  color: var(--grey-medium);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Sección de términos */
+.terms-section {
+  background: rgba(255, 185, 2, 0.05);
+  border: 1px solid rgba(255, 185, 2, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.terms-section h4 {
+  color: var(--main-white);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.rules-text {
+  color: var(--grey-medium);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  border-left: 3px solid var(--main-accent);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  color: var(--main-white);
+  font-size: 0.95rem;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--main-accent);
+  margin-top: 0.2rem;
+}
+
+/* Paso 4: Pago y Confirmación */
+.final-summary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 185, 2, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.final-summary h3 {
+  color: var(--main-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.summary-details {
+  margin-bottom: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  color: var(--grey-medium);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span:last-child {
+  color: var(--main-white);
+  font-weight: 500;
+}
+
+.cost-breakdown {
+  border-top: 1px solid rgba(255, 185, 2, 0.2);
+  padding-top: 1rem;
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+  color: var(--grey-medium);
+}
+
+.cost-row span:last-child {
+  color: var(--main-white);
+}
+
+.cost-row.total-row {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--main-white);
+  border-top: 1px solid rgba(255, 185, 2, 0.3);
+  margin-top: 0.5rem;
+  padding-top: 0.8rem;
+}
+
+.cost-row.total-row span:last-child {
+  color: var(--main-accent);
+  font-size: 1.3rem;
+}
+
+/* Métodos de pago */
+.payment-section {
+  margin-bottom: 2rem;
+}
+
+.payment-section h3,
+.payment-section h4 {
+  color: var(--main-white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.payment-method:hover {
+  border-color: rgba(255, 185, 2, 0.3);
+  background: rgba(255, 185, 2, 0.05);
+}
+
+.payment-method input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--main-accent);
+}
+
+.payment-method input[type="radio"]:checked + .method-info {
+  color: var(--main-accent);
+}
+
+.method-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--main-white);
+  font-weight: 500;
+}
+
+.method-info svg {
+  color: var(--main-accent);
+}
+
+/* Formulario de tarjeta */
+.card-form {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 185, 2, 0.1);
+  border-radius: 8px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row:last-child {
+  margin-bottom: 0;
+}
+
+.form-row .form-group:only-child {
+  grid-column: 1 / -1;
+}
+
+/* Información de transferencia */
+.transfer-info {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 185, 2, 0.05);
+  border: 1px solid rgba(255, 185, 2, 0.2);
+  border-radius: 8px;
+}
+
+.bank-details h4 {
+  color: var(--main-white);
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.bank-data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--grey-medium);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 185, 2, 0.1);
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-row span:last-child {
+  color: var(--main-white);
+  font-weight: 500;
+}
+
+.data-row .amount {
+  color: var(--main-accent);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Datos de facturación */
+.billing-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* Estados de pago */
+.payment-processing,
+.payment-success,
+.payment-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  min-height: 400px;
+  justify-content: center;
+}
+
+.processing-animation,
+.success-icon,
+.error-icon {
+  margin-bottom: 2rem;
+}
+
+.processing-animation .spinner {
+  color: var(--main-accent);
+}
+
+.success-icon svg {
+  color: var(--success);
+}
+
+.error-icon svg {
+  color: var(--error);
+}
+
+.payment-processing h3,
+.payment-success h3,
+.payment-error h3 {
+  color: var(--main-white);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.payment-processing p,
+.payment-success p,
+.payment-error p {
+  color: var(--grey-medium);
+  font-size: 1rem;
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+.reservation-details {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(40, 167, 69, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+}
+
+.reservation-details h4 {
+  color: var(--main-white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.detail-item {
+  padding: 0.5rem 0;
+  color: var(--grey-medium);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item strong {
+  color: var(--main-white);
+}
+
+.success-actions,
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.error-actions {
+  flex-direction: column;
+}
+
+/* Responsive para el paso de pago */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-methods {
+    gap: 0.8rem;
+  }
+
+  .payment-method {
+    padding: 0.8rem;
+  }
+
+  .final-summary,
+  .card-form,
+  .transfer-info,
+  .billing-section {
+    padding: 1rem;
+  }
+
+  .reservation-details {
+    max-width: none;
+    width: 100%;
+  }
+
+  .success-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .success-actions button,
+  .error-actions button {
+    width: 100%;
+  }
+}
+
+/* Acciones del paso */
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-actions button {
+  min-width: 120px;
+}
+
+.step-actions button.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .reservas-container {
+    padding: 1rem 1rem 1rem 0.2rem;
+  }
+  
+  .reservas-card {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reservas-container {
+    padding: 1rem 1rem 1rem 0.2rem;
+  }
+
+  .reservas-card {
+    padding: 1.5rem;
+    max-width: none;
+  }
+
+  .steps-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .step {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .datetime-form {
+    grid-template-columns: 1fr;
+  }
+
+  .step-actions {
+    flex-direction: column;
+  }
+
+  .step-actions button {
+    width: 100%;
+  }
+
+  .area-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .step-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .area-card {
+    padding: 1rem;
+  }
+
+  .area-image {
+    width: 60px;
+    height: 60px;
+  }
+}
