@@ -1,3 +1,103 @@
+// === EVIDENCIAS MANTENIMIENTO ===
+export async function obtenerEvidenciasMantenimiento() {
+  await delay(200);
+  return [
+    { id: 1, orden: 'Orden 1', evidencia: 'Foto1.jpg' },
+    { id: 2, orden: 'Orden 2', evidencia: 'Foto2.jpg' }
+  ];
+}
+
+// === MULTAS ===
+export async function obtenerMultas() {
+  await delay(200);
+  return [
+    { id: 1, concepto: 'Multa por ruido', monto: 10000 },
+    { id: 2, concepto: 'Multa por mascotas', monto: 5000 }
+  ];
+}
+export async function crearMulta(data) {
+  await delay(200);
+  return { success: true };
+}
+export async function editarMulta(id, data) {
+  await delay(200);
+  return { success: true };
+}
+export async function eliminarMulta(id) {
+  await delay(200);
+  return { success: true };
+}
+
+// === ROL PERMISO ===
+export async function crearRolPermiso(data) {
+  await delay(200);
+  return { success: true };
+}
+export async function editarRolPermiso(id, data) {
+  await delay(200);
+  return { success: true };
+}
+// === PLANES DE MANTENIMIENTO ===
+export async function obtenerPlanesMantenimiento() {
+  await delay(200);
+  return [
+    { id: 1, nombre: 'Plan General', descripcion: 'Mantenimiento general anual' },
+    { id: 2, nombre: 'Plan Piscina', descripcion: 'Limpieza mensual piscina' }
+  ];
+}
+// === ORDENES DE MANTENIMIENTO ===
+export async function obtenerOrdenesMantenimiento() {
+  await delay(200);
+  return [
+    { id: 1, descripcion: 'Revisión ascensor', estado: 'Pendiente' },
+    { id: 2, descripcion: 'Limpieza piscina', estado: 'Completada' }
+  ];
+}
+// === RESERVAS ÁREA ===
+export async function crearReservaArea(data, isForm = false) {
+  await delay(300);
+  return { success: true, ...data };
+}
+// === AVISOS CON ADJUNTOS ===
+export async function crearAvisoConAdjuntos({ titulo, cuerpo, segmento, id_admin, adjuntos }) {
+  await delay(300);
+  return { success: true, id: 999, titulo, cuerpo, segmento, id_admin, adjuntos };
+}
+// === PAGOS ===
+export async function crearPagoConComprobante(data) {
+  await delay(300);
+  return { success: true, message: 'Pago con comprobante registrado (mock)' };
+}
+// === ROL PERMISOS ===
+export async function obtenerRolPermisos() {
+  await delay(200);
+  return [
+    { id: 1, rol: 'Administrador', permiso: 'VER_TODO' },
+    { id: 2, rol: 'Propietario', permiso: 'GESTIONAR_TAREAS' }
+  ];
+}
+// === USUARIO ROLES ===
+export async function obtenerUsuarioRoles() {
+  await delay(200);
+  return [
+    { id: 1, usuario: 'Juan Pérez', rol: 'Administrador' },
+    { id: 2, usuario: 'María García', rol: 'Propietario' }
+  ];
+}
+// === PERMISOS ===
+export async function obtenerPermisos() {
+  await delay(200);
+  return [
+    { id: 1, nombre: 'VER_TODO' },
+    { id: 2, nombre: 'EDITAR_USUARIOS' },
+    { id: 3, nombre: 'GESTIONAR_TAREAS' }
+  ];
+}
+// === ACTIVOS ===
+export async function obtenerActivos() {
+  // Reutiliza las áreas comunes como activos para el mock
+  return obtenerAreasComunes();
+}
 // Mock API data para funcionar sin backend
 const mockUsuarios = [
   { id: 1, nombre_completo: 'Juan Pérez', correo: 'juan@email.com', telefono: '123456789', estado: 'ACTIVO' },
